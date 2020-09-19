@@ -10,6 +10,6 @@ Scenario Outline: Password verification
   Examples: 
     | invalid-value | error-message                                          | 
     |      	        | Password cannot be empty                               |
-    | a      	    | Password is too short                                  |    
+    | a      	      | Password is too short                                  |    
     | aaaaaa*       | Password should contain at least one number            |
     | aaaaaa1       | Password should contain at least one special character |
