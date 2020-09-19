@@ -5,6 +5,7 @@ Instead the test verifies the error message when user completes the register for
 without selecting the check box for Terms and Condition.
 
 Task 2
+Check file 'PASSWORD_MG.feature'
 
 Technology Stack
 
