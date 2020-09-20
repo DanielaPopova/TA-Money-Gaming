@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-18T15:41:06 EEST" name="Default suite" finished-at="2020-09-18T15:41:21 EEST" duration-ms="15159">
+  <suite started-at="2020-09-20T10:04:05 EEST" name="Default suite" finished-at="2020-09-20T10:04:21 EEST" duration-ms="15624">
     <groups>
     </groups>
-    <test started-at="2020-09-18T15:41:06 EEST" name="Default test" finished-at="2020-09-18T15:41:21 EEST" duration-ms="15159">
-      <class name="SignUpTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:SignUpTests@5dd6264]" started-at="2020-09-18T15:41:06 EEST" name="setup" finished-at="2020-09-18T15:41:16 EEST" duration-ms="9819" status="PASS">
+    <test started-at="2020-09-20T10:04:05 EEST" name="Default test" finished-at="2020-09-20T10:04:21 EEST" duration-ms="15624">
+      <class name="tests.RegistrationTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.RegistrationTests@159f197]" started-at="2020-09-20T10:04:05 EEST" name="setup" finished-at="2020-09-20T10:04:15 EEST" duration-ms="9527" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="signUpWithMissingBirthDate()[pri:0, instance:SignUpTests@5dd6264]" started-at="2020-09-18T15:41:16 EEST" name="signUpWithMissingBirthDate" finished-at="2020-09-18T15:41:20 EEST" duration-ms="4528" status="PASS">
+        <test-method signature="signUpWithUncheckedTermsAndConditions()[pri:0, instance:tests.RegistrationTests@159f197]" started-at="2020-09-20T10:04:15 EEST" name="signUpWithUncheckedTermsAndConditions" finished-at="2020-09-20T10:04:20 EEST" duration-ms="4799" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- signUpWithMissingBirthDate -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SignUpTests@5dd6264]" started-at="2020-09-18T15:41:20 EEST" name="tearDown" finished-at="2020-09-18T15:41:21 EEST" duration-ms="760" status="PASS">
+        </test-method> <!-- signUpWithUncheckedTermsAndConditions -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.RegistrationTests@159f197]" started-at="2020-09-20T10:04:20 EEST" name="tearDown" finished-at="2020-09-20T10:04:21 EEST" duration-ms="1240" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SignUpTests -->
+      </class> <!-- tests.RegistrationTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
