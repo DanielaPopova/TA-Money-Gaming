@@ -12,6 +12,9 @@ import dataObjects.User;
 import utilities.DateHandler;
 
 public class SignUpPage extends BasePage{
+	
+	private static final String TERMS_AND_CONDITION_LABEL = "map(terms)";
+	private static final String DATE_OF_BIRTH_LABEL = "dob";
 
 	@FindBy(name = "map(title)")
 	private WebElement title;
@@ -93,9 +96,11 @@ public class SignUpPage extends BasePage{
 		populateField(title, user.getTitle());
 		populateField(firstName, user.getFirstName());
 		populateField(surname, user.getSurname());
-		selectFromDropdownByText(birthDay, DateHandler.getDay(user.getDateOfBirth()));
-		selectFromDropdownByText(birthMonth, StringUtils.capitalize(DateHandler.getMonth(user.getDateOfBirth())));
-		selectFromDropdownByValue(birthYear, DateHandler.getYear(user.getDateOfBirth()));
+		if (!user.getDateOfBirth().isBlank()) {
+			selectFromDropdownByText(birthDay, DateHandler.getDay(user.getDateOfBirth()));
+			selectFromDropdownByText(birthMonth, StringUtils.capitalize(DateHandler.getMonth(user.getDateOfBirth())));
+			selectFromDropdownByValue(birthYear, DateHandler.getYear(user.getDateOfBirth()));
+		}
 		populateField(emailAddress, user.getEmailAddress());
 		populateField(telephone, user.getTelephone());
 		populateField(mobile, user.getMobile());
@@ -123,12 +128,25 @@ public class SignUpPage extends BasePage{
 		selectFromDropdownByValue(currency, value);
 	}
 	
+	public void checkTemrsAndCondition() {
+		selectCheckbox(termsAndConditions);
+	}
+	
 	public void clickJoinNow() {
 		click(joinNowButton);
 	}
 	
 	public String getTermsAndConditionErrorMessage() {
-		var label = webDriver.findElement(By.xpath("//fieldset/label[@for='map(terms)']"));
+		return getFieldInlineErrorMessage(TERMS_AND_CONDITION_LABEL);
+	}
+	
+	public String getDateOfBirthErrorMessage() {
+		return getFieldInlineErrorMessage(DATE_OF_BIRTH_LABEL);
+	}
+	
+	private String getFieldInlineErrorMessage(String labelFor) {
+		var label = webDriver.findElement(By.xpath(String.format("//fieldset/label[@for='%s']", labelFor)));
+		
 		return label.getText();
 	}
 }

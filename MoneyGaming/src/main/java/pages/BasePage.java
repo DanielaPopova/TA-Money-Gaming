@@ -28,8 +28,10 @@ public abstract class BasePage {
      * @param value
      */
     protected void selectFromDropdownByValue(WebElement webElement, String value) {
-    	var select = new Select(webElement);
-    	select.selectByValue(value);
+    	if (value != null) {
+    		var select = new Select(webElement);
+    		select.selectByValue(value);
+		}
     }
     
     /**
@@ -39,17 +41,19 @@ public abstract class BasePage {
      * @param text
      */
     protected void selectFromDropdownByText(WebElement webElement, String text) {
-    	var select = new Select(webElement);
-    	select.selectByVisibleText(text);
+    	if (text != null) {
+    		var select = new Select(webElement);
+        	select.selectByVisibleText(text);
+		}
     }
     
     protected void selectCheckbox(WebElement webElement) {
-    	if (!isCheckboxSelected(webElement)) {
+    	if (!isSelected(webElement)) {
 			click(webElement);
 		}
     }
     
-    private boolean isCheckboxSelected(WebElement webElement) {
+    private boolean isSelected(WebElement webElement) {
     	return webElement.isSelected();
     }
 }

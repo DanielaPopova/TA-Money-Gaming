@@ -40,4 +40,30 @@ public class RegistrationTests extends BaseTest{
 		String expectedErrorMessage = "This field is required";
 		Assert.assertEquals(expectedErrorMessage, signUpPage.getTermsAndConditionErrorMessage());
 	}
+	
+	/**
+	 * Test for verifying error message when new user completes the registration form
+	 * without populating date of birth data
+	 * @throws Exception 
+	 */
+	@Test
+	public void signUpWithMissingDateOfBirth() throws Exception {
+		var user = CsvHandler.parseToObjectList(USER_DATA_FILE_PATH, User.class).get(1);
+		var address = CsvHandler.parseToObjectList(ADDRESS_DATA_FILE_PATH, Address.class).get(0);
+		var account = CsvHandler.parseToObjectList(ACCOUNT_DATA_FILE_PATH, Account.class).get(0);
+		
+		var homePage = new HomePage(webDriver);
+		
+		var signUpPage = homePage.navigateToSignUpPage();
+		
+		signUpPage.populateUserData(user);
+		signUpPage.populateAddressData(address);
+		signUpPage.populateAccountData(account);
+		signUpPage.selectCurrency(Currency.GBP.name());
+		signUpPage.checkTemrsAndCondition();
+		signUpPage.clickJoinNow();
+		
+		String expectedErrorMessage = "This field is required";
+		Assert.assertEquals(expectedErrorMessage, signUpPage.getDateOfBirthErrorMessage());
+	}
 }
