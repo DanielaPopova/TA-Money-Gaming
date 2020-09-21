@@ -10,6 +10,6 @@ Scenario Outline: Password verification
   Examples: 
     | invalid-value | error-message                                          | 
     |      	    | This field is required                                 |
-    | a      	    | Password should be at least 6 characters long          |     
+    | a      	    | The minimum length is 6 characters                     |     
     | aaaaaa*       | Password should contain at least one number            |
     | aaaaaa1       | Password should contain at least one special character |
