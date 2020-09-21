@@ -17,7 +17,6 @@ public class BaseTest {
     	driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
     	driverManager.goTo(Url.MONEY_GAMING.getUrl());
     	webDriver = driverManager.getDriver();
-    	//webDriver.get(Url.MONEY_GAMING.getUrl());
     }
     
     @AfterTest
