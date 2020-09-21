@@ -1,8 +1,5 @@
 ### Task 1   
-Currently the earliest given year from the corresponding drop down menu is 1997,
-which is not sufficient in order for the new user to register as a minor (under 18).
-Instead the test verifies the error message when user completes the register form 
-without selecting the check box for Terms and Condition.
+Check test method signUpWithMissingDateOfBirth in RegistrationTests class
 
 ### Task 2   
 Check file 'PASSWORD_MG.feature'
@@ -14,5 +11,5 @@ Check file 'PASSWORD_MG.feature'
 - Apache Maven 3.6.1   
 - TestNG 7.3.0   
 - Selenium WebDriver 3.141.59   
-- Lombok 1.18.12   
+- Lombok 1.18.12 (local install is also needed)      
 - OpenCSV 5.2   
